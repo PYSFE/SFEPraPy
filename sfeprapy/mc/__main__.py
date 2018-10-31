@@ -1,4 +1,6 @@
-﻿import os
+# -*- coding: utf-8 -*-
+
+import os
 import time
 import multiprocessing as mp
 import numpy as np

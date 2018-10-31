@@ -22,3 +22,10 @@
 
 # Testing files
 /benchmarks
+
+# Python unittest files
+/.pytest_cache
+
+# MISC
+*.png
+/sfeprapy/stats.ipynb

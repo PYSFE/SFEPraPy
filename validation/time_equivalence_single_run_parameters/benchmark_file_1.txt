@@ -5,7 +5,7 @@
 #   Settings
 # ------------------------------------------------------------------------------------------------------------------
 
-simulations = 50						# Number of simulations
+simulations = 1						# Number of simulations
 reliability_target = 0.8				# Height of building [m] or reliability target 0 to 1
 n_proc = 0								# Number of threads, 0 to use all processors
 

@@ -1,19 +1,51 @@
-## Notes
+## RELEASE NOTES
 
-**KNOWN ISSUES**
-- [ ] Test with travelling fire curve `travelling_fire` in `sfeprapy.func.temperature_fires`.
-- [ ] Graphical user interface, with multiprocessing capability.
-- [ ] Make validation procedures.
+### KNOWN ISSUES AND TASKS LIST
+
+- [ ] Verification to travelling fire.
+
+- [ ] Verification to Eurocode protected steel heat transfer.
+
+- [ ] Verification to time_equivalence calculated intermediate variables. i.e. opening_factor.
+
+- [ ] Verification to distribution functions.
+
 - [ ] Make verification procedures.
+
+- [ ] Build-in Eurocode time equivalence hand calculation.
+
+- [ ] Graphical user interface for pre-processing input parameters.
+
 - [ ] Upgrade `sfeprapy.time_equivalence_core.mc_inputs_generator2_core` with `scipy.stats.norm.ppf` and `scipy.stats.gumbel_r.ppf` to generate Monte Carlo input samples.
+
 - [ ] Add array input variable feature which input files will be automatically populated based on variables arrays.
-- [ ] Generate report about generated random variables, i.e. to calculate miu and sigma and compare with input values.
-- [ ] Some steel temperature seeking cases unsuccessful, cause unknown. Currently these items are filtered out for time equivalence calculation.
-- [ ] Verification function of all distribution functions.
-- [ ] Eurocode time equivalence hand calculation.
+
+- [ ] Generate report about generated random variables, namely, to calculate miu and sigma and compare with input values.
+
+- [ ] Work out the most onerous beam location, which would give the worst time equivalence result.
+
+- [ ] Add sfeprapy.mc namespace executable feature.
+
+- [ ] Add PD 6688 time equivalence calculation.
+
+### VERSIONS
+
+**31/10/2018 VERSION: 0.0.4**
+
+- New features:
+    - Additional returned results from the Monte Carlo simulation tool `sfeprapy.time_equivalence_core.calc_time_equivalence`. Window opening factor `opening_factor` is added to be returned from the function.
+    - `sfeprapy.time_equivalence.app` is now able to run a single simulation. When 'simulations=1' is defined, all distributed variables are disabled and mean or mean(upper, lower) is used for stochastic parameters.
+    - New testing input file 'benchmark_file_1' is added for single simulation testing, all other parameters are identical to 'benchmark_file_0'. Benchmark files are moved to validation folder, contained in root directory.
+
+- Improvements:
+    - None
+
+- Bug fixes:
+    - None
 
 **21/08/2018 VERSION: 0.0.3**
-- Updated code relating simulation output result \*.p and \*res.csv files. This is to fix an issue which output fires do not align with input / output index numbering. The new \*.p and \*res.csv files are sorted by time equivalence. The new ouput files are significantly larger than previous versions due to more variables are being passed in and out from the main calculation function `sfeprapy.time_equivalence_core.calc_time_equivalence()`.
+
+- Updated code relating simulation output result \*.p and \*res.csv files. This is to fix an issue which output fires do not align with input / output index numbering. The new \*.p and \*res.csv files are sorted by time equivalence. The new output files are significantly larger than previous versions due to more variables are being passed in and out from the main calculation function `sfeprapy.time_equivalence_core.calc_time_equivalence()`.
 - Fire duration `fire_duration` is checked and reassigned if necessary so that the slowest travelling fire is able to travel the entire room `room_depth`. `fire_duration` defined in the input file will be the minimum fire duration.
 - Verification procedures are added for part of the project, including parametric fire testing, travelling fire testing and Eurocode protected steel heat transfer.
 
